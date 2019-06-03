@@ -1,18 +1,16 @@
 @import "variables";
 @import "mixin";
 
+%main-title {
+  font-family: 'Dosis', sans-serif;
+  font-size: 22px;
+  text-align: center;
+}
+
 :host {
   margin: 15px auto;
   max-width: $max-width;
   min-width: $min-width;
-  width: 100%;
-}
-
-.main {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax($main-items-width-minmax));
-  grid-column-gap: $main-items-column-gap;
-  grid-row-gap: $main-items-row-gap;
   width: 100%;
   padding: 0 $layout-gap--left-mobile 0 $layout-gap--right-mobile;
 
@@ -24,11 +22,37 @@
     margin: 40px auto;
     padding: 0 $layout-gap--left-desktop 0 $layout-gap--right-desktop;
   }
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($main-items-width-minmax));
+  grid-column-gap: $main-items-column-gap;
+  grid-row-gap: $main-items-row-gap;
+  position: relative;
+  width: 100%;
+  padding-top: 45px; // The gap for the title
+
+  &__title {
+    position: absolute; // Absolute position the title. Don't break the grid layout.
+    top: 0;
+    left: 0;
+    right: 0;
+    @extend %main-title;
+  }
 
   &__items {
     grid-column: $grid-column;
     display: grid;
     grid-column-gap: $main-items-column-gap;
     grid-row-gap: $main-items-row-gap;
+  }
+
+  &__empty-list {
+    @extend %main-title;
+
+    @include media-queries(desktop) {
+      font-size: 28px;
+    }
   }
 }
