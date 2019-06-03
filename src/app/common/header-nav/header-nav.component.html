@@ -1,0 +1,5 @@
+<nav class="header-nav" [class.header-nav--sticky]="headerSticky">
+  <p class="header-nav__title header-nav__title--sticky" [class.header-nav__title--active]="headerSticky">Zone: Movies portal</p>
+  <p class="header-nav__dropdown-title">Review rating</p>
+  <app-dropdown class="header-nav__dropdown" [items]="filterData" [label]="'Filter by rating'" [selectedValue]="filterData && filterData[6]"></app-dropdown>
+</nav>

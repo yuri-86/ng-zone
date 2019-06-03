@@ -1,0 +1,38 @@
+/* Body */
+$max-width: 1160px;
+$min-width: 320px;
+
+/* Grid */
+$grid-template-columns: 1fr minmax(auto, $max-width) 1fr;
+$grid-column: 2;
+
+/* Header */
+$headerHeight: 90px;
+$headerHeightSticky: 0;
+$headerTextColor: #fffcfc;
+$headerBackground: #3f51b5;
+$headerTransition: .5s;
+
+/* Nav */
+$headerNavHeight: 55px;
+$headerNavBackground: #36469c;
+
+/* Main */
+$main-items-width-minmax: 300px, 1fr;
+$main-items-column-gap: 20px;
+$main-items-row-gap: 20px;
+$main-gaps-mobile: 0 15px;
+$main-gaps-desktop: 0 20px;
+
+/* Item */
+$item-border-color: #dbdbdb;
+$item-border-color-active: #0066FF;
+$item-title-font-size: 18px;
+$item-title-color: #131D26;
+$item-description-font-size: 14px;
+
+/* Layout */
+$layout-gap--left-mobile: 15px;
+$layout-gap--right-mobile: 15px;
+$layout-gap--left-desktop: 20px;
+$layout-gap--right-desktop: 20px;

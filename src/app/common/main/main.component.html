@@ -1,0 +1,16 @@
+<app-loadable-content [loadable]="loaded$ | async">
+  <main class="main" *ngIf="(movies$ | async) as movies else emptyContent">
+    <ng-container *ngIf="movies.length else moviesListEmpty">
+      <app-movie-item *ngFor="let movie of movies" [movie]="movie"></app-movie-item>
+    </ng-container>
+  </main>
+</app-loadable-content>
+
+<ng-template #moviesListEmpty>
+  <p>Movies list is empty. Please refine the review rating filter</p>
+</ng-template>
+
+<ng-template #emptyContent>
+  <p>Something went wrong.</p>
+  <p>There's no any movies right now.</p>
+</ng-template>

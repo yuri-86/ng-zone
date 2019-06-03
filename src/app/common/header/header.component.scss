@@ -1,0 +1,45 @@
+@import "variables";
+@import "mixin";
+
+.header {
+  $this: &; // Refer to header
+
+  display: grid;
+  grid-template-columns: $grid-template-columns;
+  justify-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  height: $headerHeight;
+  background-color: $headerBackground;
+  font-weight: 300;
+  color: $headerTextColor;
+  @include transition($headerTransition);
+  @include box-shadow(0 2px 6px 0 rgba(0, 0, 0, 0.3));
+
+  &.header--sticky {
+    @include transform(translateY(-100%));
+
+    #{$this}__title {
+      font-size: 22px;
+    }
+
+    #{$this}__description {
+      font-size: 18px;
+    }
+  }
+
+  &__title {
+    font-family: 'Lato', sans-serif;
+    grid-column: $grid-column;
+    @include transition($headerTransition);
+  }
+
+  &__description {
+    font-family: 'Open Sans', sans-serif;
+    grid-column: $grid-column;
+    @include transition($headerTransition);
+  }
+}

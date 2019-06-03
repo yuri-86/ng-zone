@@ -1,0 +1,30 @@
+@import "variables";
+@import "mixin";
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($main-items-width-minmax));
+  grid-column-gap: $main-items-column-gap;
+  grid-row-gap: $main-items-row-gap;
+  margin: 15px auto;
+  max-width: $max-width;
+  width: 100%;
+  padding: 0 $layout-gap--left-mobile 0 $layout-gap--right-mobile;
+
+  @include media-queries(tablet) {
+    margin: 30px auto;
+  }
+
+  @include media-queries(desktop) {
+    margin: 40px auto;
+    padding: 0 $layout-gap--left-desktop 0 $layout-gap--right-desktop;
+  }
+
+  &__items {
+    grid-column: $grid-column;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($main-items-width-minmax));
+    grid-column-gap: $main-items-column-gap;
+    grid-row-gap: $main-items-row-gap;
+  }
+}

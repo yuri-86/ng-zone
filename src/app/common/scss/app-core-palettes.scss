@@ -1,0 +1,82 @@
+@import '../../../../node_modules/@angular/material/theming';
+
+// Be sure that you only ever include 'mat-core' mixin once!
+// it should not be included for each themes.
+@include mat-core();
+
+// define a real custom palette (using http://mcg.mbitson.com)
+$md-mcgpalette0: (
+  50 : #f9fbfc,
+  100 : #f1f6f7,
+  200 : #e8f0f1,
+  300 : #dee9eb,
+  400 : #d7e5e7,
+  500 : #d0e0e3,
+  600 : #cbdce0,
+  700 : #c4d8dc,
+  800 : #bed3d8,
+  900 : #b3cbd0,
+  A100 : #ffffff,
+  A200 : #ffffff,
+  A400 : #ffffff,
+  A700 : #ffffff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+$bv-orange: (
+        50: #ffffff,
+        100: #fff7f4,
+        200: #fecdbd,
+        300: #fc9977,
+        400: #fc8259,
+        500: #fb6c3b,
+        600: #fa551d,
+        700: #f44205,
+        800: #d63a04,
+        900: #b83204,
+        A100: #ffffff,
+        A200: #fff7f4,
+        A400: #fc8259,
+        A700: #f44205,
+        contrast: (
+                50: $black-87-opacity,
+                100: $black-87-opacity,
+                200: $black-87-opacity,
+                300: $black-87-opacity,
+                400: $black-87-opacity,
+                500: white,
+                600: white,
+                700: white,
+                800: white,
+                900: white,
+                A100: $black-87-opacity,
+                A200: $black-87-opacity,
+                A400: $black-87-opacity,
+                A700: white,
+        )
+);
+
+// mandatory stuff for theming
+$bv-palette-primary: mat-palette($md-mcgpalette0);
+$bv-palette-accent:  mat-palette($bv-orange);
+
+// include the custom themes components into a themes object
+$bv-theme: mat-light-theme($bv-palette-primary, $bv-palette-accent);
+
+// include the custom themes object into the angular material themes
+@include angular-material-theme($bv-theme);

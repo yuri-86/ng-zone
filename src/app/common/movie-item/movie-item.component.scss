@@ -1,0 +1,44 @@
+@import "mixin";
+
+:host {
+  display: grid;
+}
+
+.movie-item {
+  display: grid;
+  grid-template-columns: fit-content(185px) 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  align-content: space-between;
+  padding: 20px 30px;
+  @include box-shadow(1px 2px 3px 0 rgba(0, 0, 0, 0.4));
+
+  @include media-queries(tablet) {
+    grid-column-gap: 40px;
+  }
+
+  @include media-queries(desktop) {
+    grid-column-gap: 40px;
+  }
+
+  &__title {
+    grid-column: 1/-1;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    line-height: 1.1;
+
+    @include media-queries(tablet) {
+      font-size: 24px;
+    }
+
+    @include media-queries(desktop) {
+      font-size: 26px;
+    }
+  }
+}
+
+.genres {
+  grid-column: 2;
+  font-family: 'Dosis', sans-serif;
+  align-self: end;
+}

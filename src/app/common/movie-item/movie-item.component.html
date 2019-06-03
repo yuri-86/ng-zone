@@ -1,0 +1,12 @@
+<section class="movie-item" *ngIf="movie">
+  <h1 class="movie-item__title" [innerText]="movie.title"></h1>
+  <img class="movie-item__img" *ngIf="movieImage" [src]="movieImage" [alt]="movie.title">
+  <ng-container *ngTemplateOutlet="Genres"></ng-container>
+</section>
+
+<ng-template #Genres>
+  <section class="genres" *ngIf="genresList">
+    <h3 class="genres__title">Genres</h3>
+    <p class="genres__name" *ngFor="let genre of genresList" [innerText]="genre.name"></p>
+  </section>
+</ng-template>

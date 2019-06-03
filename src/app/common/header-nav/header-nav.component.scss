@@ -1,0 +1,78 @@
+@import "mixin";
+@import "variables";
+
+.header-nav {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  justify-content: end;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  top: $headerHeight;
+  height: $headerNavHeight;
+  padding: $main-gaps-mobile;
+  background-color: $headerNavBackground;
+  @include transition($headerTransition);
+
+  @include media-queries(desktop) {
+    padding: $main-gaps-desktop;
+  }
+
+  // Edge, fix the gap between header and header-nav on sticky toggle
+  &:before {
+    content: '';
+    position: absolute;
+    top: -$headerNavHeight;
+    left: 0;
+    width: 100%;
+    height: inherit;
+    background-color: inherit;
+  }
+
+  &--sticky {
+    top: $headerHeightSticky;
+    @include opacity(.95);
+    @include box-shadow(0 2px 6px 0 rgba(0, 0, 0, 0.3));
+  }
+
+  %headerNavTitle {
+    font-family: 'Dosis', sans-serif;
+    color: #fff;
+  }
+
+  &__title {
+    display: grid;
+    align-content: center;
+    position: absolute;
+    left: 15px;
+    top: 0;
+    height: $headerNavHeight;
+    padding-right: 30px;
+    @include transition(1s);
+    @include transform(translateX(-100%));
+    @extend %headerNavTitle;
+
+    @include media-queries(desktop) {
+      left: 20px;
+    }
+  ;
+
+    &--active {
+      @include transform(translateX(0));
+    }
+  }
+
+  &__filter-title {
+    @extend %headerNavTitle;
+  }
+
+  &__dropdown {
+    width: 70px;
+  }
+
+  &__dropdown-title {
+    padding-right: 10px;
+    @extend %headerNavTitle;
+  }
+}

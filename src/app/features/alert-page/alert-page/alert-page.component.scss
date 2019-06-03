@@ -1,0 +1,15 @@
+@import "variables";
+
+:host {
+  display: grid;
+  place-content: center center;
+  place-items: center center;
+  height: calc(100vh - 2 * #{$headerHeight});
+
+  .alert-page {
+    &__title {
+      font-size: 1.5rem;
+      color: #22343e;
+    }
+  }
+}

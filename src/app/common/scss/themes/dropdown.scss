@@ -1,0 +1,41 @@
+.mat-option.mat-selected.mat-active {
+  color: #000 !important;
+}
+
+
+app-dropdown {
+  .mat-form-field {
+    width: 100%;
+
+    &-appearance-legacy {
+      .mat-form-field-infix {
+        padding: 0.7em 0;
+        border: none;
+      }
+
+      .mat-form-field-wrapper {
+        padding-bottom: 0;
+      }
+    }
+
+    &-underline {
+      display: none;
+    }
+
+    &-flex {
+      border: 1px solid #c8c8c8;
+      background-color: #fff;
+      height: 40px;
+
+    }
+
+    &-label-wrapper {
+      left: 10px;
+      margin-top: 4px;
+    }
+  }
+
+  .mat-select-value {
+    padding-left: 10px;
+  }
+}

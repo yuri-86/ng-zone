@@ -1,0 +1,7 @@
+<mat-form-field class="dropdown" *ngIf="items">
+  <mat-select [(ngModel)]="selectedValue" (ngModelChange)="onChangeEmit($event)" [name]="name">
+    <mat-option *ngFor="let item of items" [value]="item">
+      {{item}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
