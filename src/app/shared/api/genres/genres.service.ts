@@ -1,17 +1,17 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Observable, throwError} from 'rxjs';
 import {Genres} from './genres.model';
 import {HttpClient} from '@angular/common/http';
 import {catchError} from 'rxjs/operators';
+import {apiParams} from '../api-params';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GenresService {
-  protected baseUrl = 'https://api.themoviedb.org';
-  protected apiKey = 'd647493351af26c0ec5919fdcd59c3f4';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   getGenres(): Observable<Genres> {
     return this._getGenres();
@@ -26,7 +26,7 @@ export class GenresService {
 
   protected _getGenres(): Observable<Genres> {
     return this.http
-      .get<Genres>(`${this.baseUrl}/3/genre/movie/list?api_key=${this.apiKey}&language=en-US`)
+      .get<Genres>(`${apiParams.baseUrl}3/genre/movie/list?api_key=${apiParams.apiKey}&language=en-US`)
       .pipe(catchError((error: any) => throwError(error)));
   }
 }

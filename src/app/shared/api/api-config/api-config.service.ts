@@ -3,13 +3,12 @@ import {HttpClient} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import {catchError} from 'rxjs/operators';
 import {ApiConfig} from '../../state/api-config/api-config.model';
+import {apiParams} from "../api-params";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiConfigService {
-  protected baseUrl = 'https://api.themoviedb.org/3/';
-  protected apiKey = 'd647493351af26c0ec5919fdcd59c3f4';
 
   constructor(private http: HttpClient) {
   }
@@ -26,7 +25,7 @@ export class ApiConfigService {
 
   protected _getApiConfig(): Observable<ApiConfig> {
     return this.http
-      .get<ApiConfig>(`${this.baseUrl}configuration?api_key=${this.apiKey}`)
+      .get<ApiConfig>(`${apiParams.baseUrl}3/configuration?api_key=${apiParams.apiKey}`)
       .pipe(catchError((error: any) => throwError(error)));
   }
 }
