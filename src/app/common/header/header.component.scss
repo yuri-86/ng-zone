@@ -1,6 +1,10 @@
 @import "variables";
 @import "mixin";
 
+:host {
+  z-index: 1;
+}
+
 .header {
   $this: &; // Refer to header
 
