@@ -1,7 +1,7 @@
 <app-loadable-content [loadable]="loaded$ | async">
   <main class="main" *ngIf="(movies$ | async) as movies else emptyContent">
-    <h1 class="main__title">Now showing movies</h1>
     <ng-container *ngIf="movies.length else moviesListEmpty">
+      <h1 class="main__title">Now showing movies</h1>
       <app-movie-item *ngFor="let movie of movies" [movie]="movie"></app-movie-item>
     </ng-container>
   </main>
