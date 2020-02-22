@@ -3,6 +3,9 @@ import {MainComponent} from './common/main/main.component';
 
 export const routes: Routes = [
   {path: '', component: MainComponent},
-  {path: '**', loadChildren: './features/alert-page/alert-page.module#AlertPageModule'}
+  {
+    path: '**',
+    loadChildren: () => import('./features/alert-page/alert-page.module').then(m => m.AlertPageModule)
+  }
 ];
 
