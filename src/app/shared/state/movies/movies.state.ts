@@ -16,6 +16,7 @@ import {Movie} from './movie.model';
 import {MoviesService} from '../../api/movies/movies.service';
 import {MoviesList} from '../../api/movies/movies-list.model';
 import {asapScheduler, of} from 'rxjs';
+import {Injectable} from "@angular/core";
 
 export interface MoviesStateModel {
   movies: Loadable<Movie[]>;
@@ -30,6 +31,7 @@ export interface MoviesStateModel {
   }
 })
 
+@Injectable()
 export class MoviesState implements NgxsOnInit {
 
   constructor(protected service: MoviesService) {

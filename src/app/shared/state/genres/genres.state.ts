@@ -11,6 +11,7 @@ import {GenresService} from '../../api/genres/genres.service';
 import {Genre} from './genres.model';
 import {LoadGenres, LoadGenresError, LoadGenresSuccess} from './genres.actions';
 import {Genres} from '../../api/genres/genres.model';
+import {Injectable} from "@angular/core";
 
 export interface GenresStateModel {
   genres: Loadable<Genre[]>;
@@ -23,6 +24,7 @@ export interface GenresStateModel {
   }
 })
 
+@Injectable()
 export class GenresState implements NgxsOnInit {
 
   constructor(protected service: GenresService) {

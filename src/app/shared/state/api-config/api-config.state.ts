@@ -10,6 +10,7 @@ import {catchError, map} from 'rxjs/operators';
 import {asapScheduler, of} from 'rxjs';
 import {ApiConfigService} from '../../api/api-config/api-config.service';
 import {ApiConfig} from './api-config.model';
+import {Injectable} from "@angular/core";
 
 export interface ApiConfigStateModel {
   apiConfig: Loadable<ApiConfig>;
@@ -22,6 +23,7 @@ export interface ApiConfigStateModel {
   }
 })
 
+@Injectable()
 export class ApiConfigState implements NgxsOnInit {
 
   constructor(protected service: ApiConfigService) {
