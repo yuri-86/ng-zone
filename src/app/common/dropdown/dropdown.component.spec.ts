@@ -2,12 +2,12 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {DropdownComponent} from './dropdown.component';
 import {FormsModule} from '@angular/forms';
-import {MatSelectModule} from '@angular/material';
 import {NgxsModule} from '@ngxs/store';
 import {MoviesState} from '../../shared/state/movies/movies.state';
 import {GenresState} from '../../shared/state/genres/genres.state';
 import {ApiConfigState} from '../../shared/state/api-config/api-config.state';
 import {HttpClientModule} from '@angular/common/http';
+import {MatSelectModule} from '@angular/material/select';
 
 describe('DropdownComponent', () => {
   let component: DropdownComponent;

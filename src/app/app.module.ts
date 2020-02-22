@@ -13,21 +13,14 @@ import {MovieItemComponent} from './common/movie-item/movie-item.component';
 import {LoadableModule} from './shared/loadable/loadable.module';
 import {GenresState} from './shared/state/genres/genres.state';
 import {ApiConfigState} from './shared/state/api-config/api-config.state';
-import {MatSelectModule, MatSliderModule} from '@angular/material';
 import {FormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {DropdownComponent} from './common/dropdown/dropdown.component';
-import { HeaderNavComponent } from './common/header-nav/header-nav.component';
+import {HeaderNavComponent} from './common/header-nav/header-nav.component';
+import {MatSliderModule} from '@angular/material/slider';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    MainComponent,
-    MovieItemComponent,
-    DropdownComponent,
-    HeaderNavComponent
-  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -39,6 +32,14 @@ import { HeaderNavComponent } from './common/header-nav/header-nav.component';
     FormsModule,
     MatSelectModule,
     BrowserAnimationsModule
+  ],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    MainComponent,
+    MovieItemComponent,
+    DropdownComponent,
+    HeaderNavComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
